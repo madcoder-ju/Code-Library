@@ -23,3 +23,6 @@
 	returns the number of 1's.
 	e.g. __builtin_popcount(14) = 3 as 14 = 1110
 
+
+6. sort(begin(v), end(v), [](int a,int b){ return a < b;})
+	sorts with boolean compare functions 
