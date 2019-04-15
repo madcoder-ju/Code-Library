@@ -1,0 +1,21 @@
+void bfs(int source) {
+	vector<int> D( N, INT_MAX );
+	queue<int> Q;
+
+	Q.push( source );
+	D[ source ] = 0;
+
+	while( !Q.empty() ) {
+		int u = Q.front();
+		Q.pop();
+		for(auto v : g[ u ]) {
+			if( D[ u ] + 1 > D[ v ] ) {
+				D[ v ] = D[ u ] + 1;
+				Q.push( v );
+			}
+		}
+	}
+	for(int i = 1; i < N; i += 1) {
+		cout << D[ i ] << ' ';
+	} cout << '\n';
+}
