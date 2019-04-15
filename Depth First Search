@@ -1,0 +1,9 @@
+void dfs(int u) {
+	color[ u ] = 1;
+	for(auto v : g[ u ]) {
+		if( color[ v ] == 0 ) {
+			dfs( v );
+		}
+	}
+	color[ u ] = 2;
+}
